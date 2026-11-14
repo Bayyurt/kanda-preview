@@ -1,0 +1,29 @@
+{
+  "name": "Kanda IA — Comunidade de IA · Angola",
+  "short_name": "Kanda IA",
+  "lang": "pt-AO",
+  "description": "Educação e comunidade de inteligência artificial em Angola.",
+  "start_url": "/kanda-preview/site-lang/",
+  "scope": "/kanda-preview/site-lang/",
+  "display": "browser",
+  "background_color": "#05050a",
+  "theme_color": "#05050a",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
