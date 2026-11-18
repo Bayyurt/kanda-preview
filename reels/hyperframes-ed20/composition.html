@@ -166,7 +166,7 @@
       .item { position: absolute; z-index: 14; transform-origin: 50% 50%; }
       .number {
         left: 200px;
-        top: 430px;
+        top: 780px;
         text-align: left;
       }
       .number .val {
@@ -202,11 +202,11 @@
       }
       .chip.yel { background: var(--yel); box-shadow: 6px 6px 0 var(--blue); }
       .chip.blue { background: #dff3ff; box-shadow: 6px 6px 0 var(--pink); }
-      #chip-first { left: 200px; top: 720px; }
-      #chip-kukula { left: 180px; top: 430px; }
-      #num-2m { left: 180px; top: 620px; }
-      #chip-60 { left: 180px; top: 430px; }
-      #chip-dates { left: 180px; top: 620px; }
+      #chip-first { left: 200px; top: 820px; }
+      #chip-kukula { left: 180px; top: 780px; }
+      #num-2m { left: 180px; top: 870px; }
+      #chip-60 { left: 180px; top: 780px; }
+      #chip-dates { left: 180px; top: 900px; }
       .card {
         left: 150px;
         top: 430px;
@@ -235,24 +235,28 @@
         color: var(--ink);
       }
       .snip {
-        left: 130px;
-        top: 400px;
-        width: 800px;
+        left: 80px;
+        top: 350px;
+        width: 900px;
         background: var(--panel);
         border: 3px solid var(--ink);
         box-shadow: 8px 8px 0 var(--blue), -4px -3px 0 var(--pink);
         padding: 16px 16px 14px;
+        overflow: visible;
       }
-      .snip { overflow: visible; }
-      .snip img { display: block; width: 92%; height: auto; margin: 0 4%; }
+      .snip img.shot { display: block; width: 100%; height: auto; }
       .snip .cap {
         margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
         font-family: "Space Mono", monospace;
         font-size: 20px;
         letter-spacing: 0.06em;
         text-transform: uppercase;
         color: var(--ink);
       }
+      .snip .cap img { height: 36px; width: auto; display: block; }
       .kandinho {
         position: absolute;
         left: 28px;
@@ -339,7 +343,7 @@
         <img src="assets/kanda-mark.png" alt="" />
       </div>
 
-      <div id="stamp" class="stamp clip" data-start="0" data-duration="6.16" data-track-index="2">
+      <div id="stamp" class="stamp clip" data-start="0" data-duration="3.38" data-track-index="2">
         <div class="kicker">Kanda IA · 18 nov 2026</div>
         <h1>Benguela TIC 2026</h1>
       </div>
@@ -368,9 +372,25 @@
       </div>
       <div id="chip-dates" class="item chip blue clip" data-start="23.78" data-duration="3.08" data-track-index="5">12 a 14 de novembro · Largo de África</div>
 
-      <div id="snip" class="item snip clip" data-start="26.86" data-duration="5.94" data-track-index="4">
-        <img src="assets/snips/pti-headline.png" alt="Título da notícia do PTI sobre a Kitanda Agro e a Benguela TIC 2026" />
-        <div class="cap">Fonte: PTI · 17 nov 2026</div>
+      <div id="snip-headline" class="item snip clip" data-start="3.38" data-duration="2.78" data-track-index="7">
+        <img class="shot" src="assets/snips/pti-headline.png" alt="Título da notícia do PTI: Startup Kitanda Agro vence concurso de inovação da Benguela TIC 2026" />
+        <div class="cap"><img src="assets/snips/pti-logo.png" alt="PTI"> Fonte: PTI · 17 nov 2026</div>
+      </div>
+      <div id="snip-premio" class="item snip clip" data-start="6.16" data-duration="5.14" data-track-index="7">
+        <img class="shot" src="assets/snips/pti-para-premio.png" alt="Parágrafo do PTI sobre o primeiro lugar da Kitanda Agro e o prémio de quatro milhões de kwanzas" />
+        <div class="cap"><img src="assets/snips/pti-logo.png" alt="PTI"> Fonte: PTI · 17 nov 2026</div>
+      </div>
+      <div id="snip-kukula" class="item snip clip" data-start="15.53" data-duration="6.34" data-track-index="7">
+        <img class="shot" src="assets/snips/pti-para-kukula.png" alt="Parágrafo do PTI sobre o terceiro lugar da Kukula, com uma aplicação de gestão agropecuária que usa IA" />
+        <div class="cap"><img src="assets/snips/pti-logo.png" alt="PTI"> Fonte: PTI · 17 nov 2026</div>
+      </div>
+      <div id="snip-feira" class="item snip clip" data-start="21.87" data-duration="4.99" data-track-index="7">
+        <img class="shot" src="assets/snips/pti-para-feira.png" alt="Parágrafo do PTI sobre as datas da Feira Benguela TIC 2026 e as cerca de 60 startups" />
+        <div class="cap"><img src="assets/snips/pti-logo.png" alt="PTI"> Fonte: PTI · 17 nov 2026</div>
+      </div>
+      <div id="snip-headline-end" class="item snip clip" data-start="26.86" data-duration="5.94" data-track-index="7">
+        <img class="shot" src="assets/snips/pti-headline.png" alt="Título da notícia do PTI sobre a Kitanda Agro e a Benguela TIC 2026" />
+        <div class="cap"><img src="assets/snips/pti-logo.png" alt="PTI"> Fonte: PTI · 17 nov 2026</div>
       </div>
 
       <div id="bubble" class="bubble clip" data-start="31.03" data-duration="1.77" data-track-index="6">Bip!</div>
@@ -477,7 +497,11 @@
       tl.fromTo("#num-2m", spring, sprung, 20.21);
       tl.fromTo("#chip-60", spring, sprung, 21.87);
       tl.fromTo("#chip-dates", spring, sprung, 23.78);
-      tl.fromTo("#snip", spring, sprung, 26.86);
+      tl.fromTo("#snip-headline", spring, sprung, 3.38);
+      tl.fromTo("#snip-premio", spring, sprung, 6.16);
+      tl.fromTo("#snip-kukula", spring, sprung, 15.53);
+      tl.fromTo("#snip-feira", spring, sprung, 21.87);
+      tl.fromTo("#snip-headline-end", spring, sprung, 26.86);
       tl.fromTo("#bubble", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(3)" }, 31.03);
 
       // Subtitle fades, timed to the voice
