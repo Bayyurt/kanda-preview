@@ -58,7 +58,7 @@
       .halftone {
         position: absolute;
         inset: 0;
-        opacity: 0.5;
+        opacity: 0.7;
         background-image:
           radial-gradient(rgba(255,72,176,.18) 1px, transparent 1.4px),
           radial-gradient(rgba(0,120,191,.14) 1px, transparent 1.4px);
@@ -80,11 +80,11 @@
         right: -12%;
         bottom: -4%;
         height: 46%;
-        opacity: 0.55;
+        opacity: 0.9;
         background:
           linear-gradient(transparent, rgba(0,91,147,.06)),
-          repeating-linear-gradient(90deg, rgba(0,91,147,.14) 0 1px, transparent 1px 44px),
-          repeating-linear-gradient(0deg, rgba(0,91,147,.14) 0 1px, transparent 1px 44px);
+          repeating-linear-gradient(90deg, rgba(0,91,147,.28) 0 2px, transparent 2px 36px),
+          repeating-linear-gradient(0deg, rgba(0,91,147,.28) 0 2px, transparent 2px 36px);
         transform: perspective(480px) rotateX(58deg);
         transform-origin: center bottom;
         -webkit-mask-image: linear-gradient(transparent, #f4efe4 52%);
@@ -103,7 +103,7 @@
           rgba(244,239,228,.10) 4px
         );
         mix-blend-mode: multiply;
-        opacity: 0.45;
+        opacity: 0.7;
       }
       .mark {
         position: absolute;
@@ -166,7 +166,7 @@
       .item { position: absolute; z-index: 14; transform-origin: 50% 50%; }
       .number {
         left: 200px;
-        top: 780px;
+        top: 800px;
         text-align: left;
       }
       .number .val {
@@ -202,7 +202,7 @@
       }
       .chip.yel { background: var(--yel); box-shadow: 6px 6px 0 var(--blue); }
       .chip.blue { background: #dff3ff; box-shadow: 6px 6px 0 var(--pink); }
-      #chip-first { left: 200px; top: 820px; }
+      #chip-first { left: 200px; top: 680px; }
       #chip-kukula { left: 180px; top: 780px; }
       #num-2m { left: 180px; top: 870px; }
       #chip-60 { left: 180px; top: 780px; }
@@ -238,9 +238,9 @@
         left: 80px;
         top: 350px;
         width: 900px;
-        background: var(--panel);
+        background: #fffaf0;
         border: 3px solid var(--ink);
-        box-shadow: 8px 8px 0 var(--blue), -4px -3px 0 var(--pink);
+        box-shadow: 8px 8px 0 var(--blue), -4px -3px 0 var(--pink), 0 0 0 8px rgba(244,239,228,.82);
         padding: 16px 16px 14px;
         overflow: visible;
       }
@@ -291,7 +291,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--panel);
+        background: #fffaf0;
         border: 3px solid var(--ink);
         box-shadow: 6px 6px 0 var(--pink), -3px -2px 0 var(--yel);
         padding: 18px 22px 16px;
@@ -315,6 +315,56 @@
         font-size: 40px;
         letter-spacing: -0.03em;
       }
+
+      .midgrid {
+        position: absolute; inset: 8% -8% 28%;
+        background:
+          repeating-linear-gradient(90deg, rgba(0,91,147,.22) 0 2px, transparent 2px 48px),
+          repeating-linear-gradient(0deg, rgba(214,30,130,.16) 0 2px, transparent 2px 48px);
+        transform: perspective(520px) rotateX(52deg);
+        transform-origin: center bottom;
+        opacity: .7;
+        -webkit-mask-image: linear-gradient(transparent, #f4efe4 20%, #f4efe4 80%, transparent);
+        mask-image: linear-gradient(transparent, #f4efe4 20%, #f4efe4 80%, transparent);
+        z-index: 1;
+      }
+      .blob {
+        position: absolute; border-radius: 50%; pointer-events: none; z-index: 2;
+        filter: blur(2px);
+      }
+      .blob.a { width: 420px; height: 420px; left: -80px; top: 520px; background: radial-gradient(circle, rgba(255,72,176,.42), transparent 68%); }
+      .blob.b { width: 380px; height: 380px; right: -60px; top: 700px; background: radial-gradient(circle, rgba(0,120,191,.40), transparent 68%); }
+      .blob.c { width: 300px; height: 300px; left: 360px; top: 980px; background: radial-gradient(circle, rgba(255,232,0,.38), transparent 68%); }
+      .blob.d { width: 260px; height: 260px; left: 700px; top: 420px; background: radial-gradient(circle, rgba(214,30,130,.32), transparent 68%); }
+      .para {
+        position: absolute; z-index: 3; border: 3px solid var(--ink);
+        box-shadow: 6px 6px 0 var(--pink), -3px -2px 0 var(--yel);
+      }
+      .para.sq { width: 86px; height: 86px; background: var(--yel); top: 640px; left: 820px; }
+      .para.sq2 { width: 64px; height: 64px; background: var(--pink); top: 1080px; left: 70px; }
+      .para.bar { width: 24px; height: 180px; background: var(--blue); top: 860px; left: 990px; }
+      .para.circ { width: 120px; height: 120px; border-radius: 50%; background: transparent; border-width: 8px; border-color: var(--pink); top: 900px; left: 740px; box-shadow: 8px 8px 0 var(--yel); }
+      .bit, .dot {
+        position: absolute; z-index: 4;
+        font-family: "Space Mono", monospace; font-weight: 700;
+        color: var(--ink); letter-spacing: .06em; text-transform: uppercase;
+      }
+      .bit { font-size: 18px; background: var(--yel); border: 2px solid var(--ink); padding: 3px 7px; box-shadow: 3px 3px 0 var(--pink); }
+      .dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--ink); }
+      .icon {
+        position: absolute; z-index: 5; width: 92px; height: 92px;
+        filter: drop-shadow(5px 5px 0 var(--pink)) drop-shadow(-3px -2px 0 var(--yel));
+      }
+      .ticker {
+        position: absolute; left: 0; right: 0; top: 1210px; height: 54px; z-index: 8;
+        overflow: hidden; background: var(--ink); border-top: 3px solid var(--yel); border-bottom: 3px solid var(--pink);
+      }
+      .ticker-track {
+        display: flex; white-space: nowrap; height: 100%; align-items: center;
+        font-family: "Space Mono", monospace; font-weight: 700; font-size: 22px;
+        letter-spacing: .16em; color: var(--yel);
+      }
+      .ticker-track span { padding-right: 48px; }
       .clip { position: absolute; }
     </style>
   </head>
@@ -323,17 +373,64 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="32.8"
+      data-duration="29.6"
       data-width="1080"
       data-height="1920"
       data-fps="30"
     >
       <div class="bg" id="bg">
         <div class="halftone"></div>
-        <div class="floor"></div>
+        <div class="floor" id="floor"></div>
+
+        <div class="midgrid" id="midgrid"></div>
+        <div class="blob a" id="blob-a"></div>
+        <div class="blob b" id="blob-b"></div>
+        <div class="blob c" id="blob-c"></div>
+        <div class="blob d" id="blob-d"></div>
+        <div class="para sq" id="para-sq"></div>
+        <div class="para sq2" id="para-sq2"></div>
+        <div class="para bar" id="para-bar"></div>
+        <div class="para circ" id="para-circ"></div>
+
         <div class="glow"></div>
       </div>
-      <div class="scan"></div>
+      <div class="scan" id="scan"></div>
+
+      <div class="ticker" id="ticker">
+        <div class="ticker-track" id="ticker-track"><span>BENGUELA TIC 2026 · KITANDA AGRO · KUKULA · IA NO CAMPO · </span><span>BENGUELA TIC 2026 · KITANDA AGRO · KUKULA · IA NO CAMPO · </span><span>BENGUELA TIC 2026 · KITANDA AGRO · KUKULA · IA NO CAMPO · </span><span>BENGUELA TIC 2026 · KITANDA AGRO · KUKULA · IA NO CAMPO · </span><span>BENGUELA TIC 2026 · KITANDA AGRO · KUKULA · IA NO CAMPO · </span><span>BENGUELA TIC 2026 · KITANDA AGRO · KUKULA · IA NO CAMPO · </span><span>BENGUELA TIC 2026 · KITANDA AGRO · KUKULA · IA NO CAMPO · </span><span>BENGUELA TIC 2026 · KITANDA AGRO · KUKULA · IA NO CAMPO · </span></div>
+      </div>
+      <div class="dot" id="dot-0" style="left:90px;top:620px;background:#ffe800"></div><div class="dot" id="dot-1" style="left:160px;top:740px;background:#ff48b0"></div><div class="dot" id="dot-2" style="left:250px;top:1100px;background:#0078bf"></div><div class="dot" id="dot-3" style="left:330px;top:980px;background:#ffe800"></div><div class="dot" id="dot-4" style="left:420px;top:700px;background:#ff48b0"></div><div class="dot" id="dot-5" style="left:510px;top:1050px;background:#0078bf"></div><div class="dot" id="dot-6" style="left:600px;top:880px;background:#ffe800"></div><div class="dot" id="dot-7" style="left:690px;top:1120px;background:#ff48b0"></div><div class="dot" id="dot-8" style="left:780px;top:640px;background:#0078bf"></div><div class="dot" id="dot-9" style="left:860px;top:940px;background:#ffe800"></div><div class="dot" id="dot-10" style="left:940px;top:780px;background:#ff48b0"></div><div class="dot" id="dot-11" style="left:1000px;top:1080px;background:#0078bf"></div><div class="dot" id="dot-12" style="left:120px;top:1280px;background:#ffe800"></div><div class="dot" id="dot-13" style="left:980px;top:1280px;background:#ff48b0"></div><div class="dot" id="dot-14" style="left:480px;top:1200px;background:#0078bf"></div><div class="dot" id="dot-15" style="left:200px;top:850px;background:#ffe800"></div><div class="dot" id="dot-16" style="left:920px;top:1180px;background:#ff48b0"></div><div class="dot" id="dot-17" style="left:40px;top:1000px;background:#0078bf"></div><div class="dot" id="dot-18" style="left:1040px;top:900px;background:#ffe800"></div><div class="dot" id="dot-19" style="left:730px;top:1280px;background:#ff48b0"></div>
+      <div class="bit" id="bit-0" style="left:140px;top:660px">01</div><div class="bit" id="bit-1" style="left:880px;top:720px">IA</div><div class="bit" id="bit-2" style="left:960px;top:1040px">AO</div><div class="bit" id="bit-3" style="left:80px;top:1140px">60</div><div class="bit" id="bit-4" style="left:820px;top:860px">4M</div><div class="bit" id="bit-5" style="left:700px;top:1020px">3.º</div><div class="bit" id="bit-6" style="left:500px;top:640px">TIC</div><div class="bit" id="bit-7" style="left:40px;top:780px">BGU</div><div class="bit" id="bit-8" style="left:1000px;top:640px">TEC</div><div class="bit" id="bit-9" style="left:240px;top:1220px">2026</div>
+      
+      <svg class="icon" id="icon-agro" viewBox="0 0 92 92" style="left:820px;top:700px" aria-hidden="true">
+        <rect width="92" height="92" fill="#fbf8f1" stroke="#0b2a66" stroke-width="4"/>
+        <path d="M46 78 V38" stroke="#0b2a66" stroke-width="5"/>
+        <path d="M46 42 C20 42 16 18 46 14 C76 18 72 42 46 42Z" fill="#ffe800" stroke="#0b2a66" stroke-width="4"/>
+        <path d="M46 54 C28 54 24 36 46 34 C68 36 64 54 46 54Z" fill="#0078bf" stroke="#0b2a66" stroke-width="4"/>
+      </svg>
+      <svg class="icon" id="icon-app" viewBox="0 0 92 92" style="left:70px;top:860px" aria-hidden="true">
+        <rect x="18" y="10" width="56" height="72" rx="8" fill="#fbf8f1" stroke="#0b2a66" stroke-width="4"/>
+        <rect x="26" y="22" width="40" height="22" fill="#0078bf" stroke="#0b2a66" stroke-width="3"/>
+        <rect x="26" y="50" width="18" height="8" fill="#ffe800" stroke="#0b2a66" stroke-width="2"/>
+        <rect x="48" y="50" width="18" height="8" fill="#ff48b0" stroke="#0b2a66" stroke-width="2"/>
+        <rect x="26" y="64" width="40" height="8" fill="#0b2a66"/>
+      </svg>
+      <svg class="icon" id="icon-ai" viewBox="0 0 92 92" style="left:880px;top:980px" aria-hidden="true">
+        <rect width="92" height="92" fill="#fbf8f1" stroke="#0b2a66" stroke-width="4"/>
+        <circle cx="46" cy="46" r="14" fill="#ff48b0" stroke="#0b2a66" stroke-width="4"/>
+        <circle cx="20" cy="22" r="7" fill="#ffe800" stroke="#0b2a66" stroke-width="3"/>
+        <circle cx="74" cy="22" r="7" fill="#0078bf" stroke="#0b2a66" stroke-width="3"/>
+        <circle cx="20" cy="70" r="7" fill="#0078bf" stroke="#0b2a66" stroke-width="3"/>
+        <circle cx="74" cy="70" r="7" fill="#ffe800" stroke="#0b2a66" stroke-width="3"/>
+        <path d="M28 28 L38 38 M64 28 L54 38 M28 64 L38 54 M64 64 L54 54" stroke="#0b2a66" stroke-width="3"/>
+      </svg>
+      <svg class="icon" id="icon-agro2" viewBox="0 0 92 92" style="left:520px;top:1080px;width:72px;height:72px" aria-hidden="true">
+        <circle cx="46" cy="46" r="40" fill="#ffe800" stroke="#0b2a66" stroke-width="4"/>
+        <path d="M46 70 V36" stroke="#0b2a66" stroke-width="5"/>
+        <path d="M46 40 C22 40 22 16 46 16 C70 16 70 40 46 40Z" fill="#0078bf" stroke="#0b2a66" stroke-width="4"/>
+      </svg>
+
+
 
       <div class="mark" id="mark">
         <div class="col">
@@ -343,57 +440,57 @@
         <img src="assets/kanda-mark.png" alt="" />
       </div>
 
-      <div id="stamp" class="stamp clip" data-start="0" data-duration="3.38" data-track-index="2">
+      <div id="stamp" class="stamp clip" data-start="0" data-duration="3.07" data-track-index="2">
         <div class="kicker">Kanda IA · 18 nov 2026</div>
         <h1>Benguela TIC 2026</h1>
       </div>
 
-      <div id="chip-first" class="item chip yel clip" data-start="7.55" data-duration="3.75" data-track-index="4">1.º lugar · Kitanda Agro</div>
-      <div id="num-4m" class="item number clip" data-start="9.04" data-duration="2.26" data-track-index="5">
+      <div id="chip-first" class="item chip yel clip" data-start="6.86" data-duration="3.42" data-track-index="4">1.º lugar · Kitanda Agro</div>
+      <div id="num-4m" class="item number clip" data-start="8.22" data-duration="2.06" data-track-index="5">
         <div class="val">4 milhões</div>
         <div class="lbl">kwanzas · Conecta Challenge</div>
       </div>
 
-      <div id="card-plat" class="item card clip" data-start="11.30" data-duration="4.23" data-track-index="4">
+      <div id="card-plat" class="item card clip" data-start="10.28" data-duration="3.84" data-track-index="4">
         <div class="bar"></div>
         <h2>A plataforma da Kitanda Agro</h2>
         <p>Liga pequenos produtores agrícolas a supermercados, hotéis e cantinas.</p>
       </div>
 
-      <div id="chip-kukula" class="item chip clip" data-start="15.66" data-duration="6.21" data-track-index="4">Kukula · 3.º lugar</div>
-      <div id="num-2m" class="item number clip" data-start="20.21" data-duration="1.66" data-track-index="5">
+      <div id="chip-kukula" class="item chip clip" data-start="14.24" data-duration="5.64" data-track-index="4">Kukula · 3.º lugar</div>
+      <div id="num-2m" class="item number clip" data-start="18.37" data-duration="1.51" data-track-index="5">
         <div class="val">2 milhões</div>
         <div class="lbl">kwanzas · aplicação com IA</div>
       </div>
 
-      <div id="chip-60" class="item number clip" data-start="21.87" data-duration="4.99" data-track-index="4">
+      <div id="chip-60" class="item number clip" data-start="19.88" data-duration="4.53" data-track-index="4">
         <div class="val">60 startups</div>
         <div class="lbl">cerca de · Benguela</div>
       </div>
-      <div id="chip-dates" class="item chip blue clip" data-start="23.78" data-duration="3.08" data-track-index="5">12 a 14 de novembro · Largo de África</div>
+      <div id="chip-dates" class="item chip blue clip" data-start="21.62" data-duration="2.79" data-track-index="5">12 a 14 de novembro · Largo de África</div>
 
-      <div id="snip-headline" class="item snip clip" data-start="3.38" data-duration="2.78" data-track-index="7">
+      <div id="snip-headline" class="item snip clip" data-start="3.07" data-duration="2.53" data-track-index="7">
         <img class="shot" src="assets/snips/pti-headline.png" alt="Título da notícia do PTI: Startup Kitanda Agro vence concurso de inovação da Benguela TIC 2026" />
         <div class="cap"><img src="assets/snips/pti-logo.png" alt="PTI"> Fonte: PTI · 17 nov 2026</div>
       </div>
-      <div id="snip-premio" class="item snip clip" data-start="6.16" data-duration="5.14" data-track-index="7">
+      <div id="snip-premio" class="item snip clip" data-start="5.60" data-duration="4.68" data-track-index="7">
         <img class="shot" src="assets/snips/pti-para-premio.png" alt="Parágrafo do PTI sobre o primeiro lugar da Kitanda Agro e o prémio de quatro milhões de kwanzas" />
         <div class="cap"><img src="assets/snips/pti-logo.png" alt="PTI"> Fonte: PTI · 17 nov 2026</div>
       </div>
-      <div id="snip-kukula" class="item snip clip" data-start="15.53" data-duration="6.34" data-track-index="7">
+      <div id="snip-kukula" class="item snip clip" data-start="14.12" data-duration="5.76" data-track-index="7">
         <img class="shot" src="assets/snips/pti-para-kukula.png" alt="Parágrafo do PTI sobre o terceiro lugar da Kukula, com uma aplicação de gestão agropecuária que usa IA" />
         <div class="cap"><img src="assets/snips/pti-logo.png" alt="PTI"> Fonte: PTI · 17 nov 2026</div>
       </div>
-      <div id="snip-feira" class="item snip clip" data-start="21.87" data-duration="4.99" data-track-index="7">
+      <div id="snip-feira" class="item snip clip" data-start="19.88" data-duration="4.53" data-track-index="7">
         <img class="shot" src="assets/snips/pti-para-feira.png" alt="Parágrafo do PTI sobre as datas da Feira Benguela TIC 2026 e as cerca de 60 startups" />
         <div class="cap"><img src="assets/snips/pti-logo.png" alt="PTI"> Fonte: PTI · 17 nov 2026</div>
       </div>
-      <div id="snip-headline-end" class="item snip clip" data-start="26.86" data-duration="5.94" data-track-index="7">
+      <div id="snip-headline-end" class="item snip clip" data-start="24.41" data-duration="5.19" data-track-index="7">
         <img class="shot" src="assets/snips/pti-headline.png" alt="Título da notícia do PTI sobre a Kitanda Agro e a Benguela TIC 2026" />
         <div class="cap"><img src="assets/snips/pti-logo.png" alt="PTI"> Fonte: PTI · 17 nov 2026</div>
       </div>
 
-      <div id="bubble" class="bubble clip" data-start="31.03" data-duration="1.77" data-track-index="6">Bip!</div>
+      <div id="bubble" class="bubble clip" data-start="28.21" data-duration="1.39" data-track-index="6">Bip!</div>
 
       <div id="kandinho" class="kandinho">
         <div class="k-pose" id="pose-wave">
@@ -415,22 +512,22 @@
       </div>
 
       <div class="subs">
-        <div id="sub1" class="sub clip" data-start="0" data-duration="6.16" data-track-index="3">
+        <div id="sub1" class="sub clip" data-start="0" data-duration="5.60" data-track-index="3">
           <p>Bom dia, eu sou o Kandinho. Hoje: Benguela TIC 2026.</p>
         </div>
-        <div id="sub2" class="sub clip" data-start="6.16" data-duration="5.14" data-track-index="3">
+        <div id="sub2" class="sub clip" data-start="5.60" data-duration="4.68" data-track-index="3">
           <p>Segundo o PTI, a Kitanda Agro venceu, com <span class="n">4 milhões</span> de kwanzas.</p>
         </div>
-        <div id="sub3" class="sub clip" data-start="11.30" data-duration="4.23" data-track-index="3">
+        <div id="sub3" class="sub clip" data-start="10.28" data-duration="3.84" data-track-index="3">
           <p>Liga pequenos produtores a supermercados, hotéis e cantinas.</p>
         </div>
-        <div id="sub4" class="sub clip" data-start="15.53" data-duration="6.34" data-track-index="3">
+        <div id="sub4" class="sub clip" data-start="14.12" data-duration="5.76" data-track-index="3">
           <p>A Kukula, com uma aplicação de gestão agropecuária com IA, ficou em terceiro, com <span class="n">2 milhões</span>.</p>
         </div>
-        <div id="sub5" class="sub clip" data-start="21.87" data-duration="4.99" data-track-index="3">
+        <div id="sub5" class="sub clip" data-start="19.88" data-duration="4.53" data-track-index="3">
           <p>Cerca de <span class="n">60</span> startups, de <span class="n">12 a 14</span> de novembro, em Benguela.</p>
         </div>
-        <div id="sub6" class="sub clip" data-start="26.86" data-duration="5.94" data-track-index="3">
+        <div id="sub6" class="sub clip" data-start="24.41" data-duration="5.19" data-track-index="3">
           <p>Fora de Luanda também se constrói. Mais em kandaia.ao.</p>
         </div>
       </div>
@@ -438,7 +535,7 @@
       <audio
         id="vo"
         data-start="0"
-        data-duration="32.328"
+        data-duration="29.376"
         data-track-index="10"
         src="vo/take.mp3"
         data-has-audio="true"
@@ -448,16 +545,16 @@
       const tl = gsap.timeline({ paused: true });
 
       // Camera push per scene
-      tl.fromTo("#bg", { scale: 1.00 }, { scale: 1.05, duration: 6.16, ease: "none" }, 0);
-      tl.fromTo("#bg", { scale: 1.00 }, { scale: 1.06, duration: 9.37, ease: "none", immediateRender: false }, 6.16);
-      tl.fromTo("#bg", { scale: 1.00 }, { scale: 1.06, duration: 11.33, ease: "none", immediateRender: false }, 15.53);
-      tl.fromTo("#bg", { scale: 1.00 }, { scale: 1.05, duration: 5.94, ease: "none", immediateRender: false }, 26.86);
+      tl.fromTo("#bg", { scale: 1.00 }, { scale: 1.05, duration: 5.60, ease: "none" }, 0);
+      tl.fromTo("#bg", { scale: 1.00 }, { scale: 1.06, duration: 8.52, ease: "none", immediateRender: false }, 5.60);
+      tl.fromTo("#bg", { scale: 1.00 }, { scale: 1.06, duration: 10.29, ease: "none", immediateRender: false }, 14.12);
+      tl.fromTo("#bg", { scale: 1.00 }, { scale: 1.05, duration: 5.19, ease: "none", immediateRender: false }, 24.41);
 
       // Brand bob
-      tl.to("#mark", { y: -6, duration: 1.0, ease: "sine.inOut", repeat: 32, yoyo: true }, 0);
+      tl.to("#mark", { y: -6, duration: 1.0, ease: "sine.inOut", repeat: 29, yoyo: true }, 0);
 
       // Kandinho bob
-      tl.to("#kandinho", { y: -8, duration: 1.0, ease: "sine.inOut", repeat: 32, yoyo: true }, 0);
+      tl.to("#kandinho", { y: -8, duration: 1.0, ease: "sine.inOut", repeat: 29, yoyo: true }, 0);
 
       // Poses: wave (hello), point (facts), wave (bye)
       function hidePoses(t) {
@@ -465,16 +562,16 @@
       }
       hidePoses(0);
       // waving hello 0–6.16
-      for (let t = 0; t < 6.16; t += 0.22) {
+      for (let t = 0; t < 5.60; t += 0.22) {
         const a = Math.floor(t / 0.22) % 2 === 0;
         tl.set("#pose-wave", { opacity: a ? 1 : 0 }, t);
         tl.set("#pose-wave2", { opacity: a ? 0 : 1 }, t);
       }
-      hidePoses(6.16);
-      tl.set("#pose-point", { opacity: 1 }, 6.16);
-      hidePoses(26.86);
-      for (let t = 26.86; t < 32.8; t += 0.22) {
-        const a = Math.floor((t - 26.86) / 0.22) % 2 === 0;
+      hidePoses(5.60);
+      tl.set("#pose-point", { opacity: 1 }, 5.60);
+      hidePoses(24.41);
+      for (let t = 24.41; t < 29.6; t += 0.22) {
+        const a = Math.floor((t - 24.41) / 0.22) % 2 === 0;
         tl.set("#pose-wave", { opacity: a ? 1 : 0 }, t);
         tl.set("#pose-wave2", { opacity: a ? 0 : 1 }, t);
       }
@@ -489,26 +586,77 @@
       // Stamp + items spring in
       const spring = { scale: 0.6, opacity: 0, y: 18 };
       const sprung = { scale: 1, opacity: 1, y: 0, duration: 0.55, ease: "back.out(2.2)" };
-      tl.fromTo("#stamp", spring, sprung, 0.15);
-      tl.fromTo("#chip-first", spring, sprung, 7.55);
-      tl.fromTo("#num-4m", spring, sprung, 9.04);
-      tl.fromTo("#card-plat", spring, sprung, 11.30);
-      tl.fromTo("#chip-kukula", spring, sprung, 15.66);
-      tl.fromTo("#num-2m", spring, sprung, 20.21);
-      tl.fromTo("#chip-60", spring, sprung, 21.87);
-      tl.fromTo("#chip-dates", spring, sprung, 23.78);
-      tl.fromTo("#snip-headline", spring, sprung, 3.38);
-      tl.fromTo("#snip-premio", spring, sprung, 6.16);
-      tl.fromTo("#snip-kukula", spring, sprung, 15.53);
-      tl.fromTo("#snip-feira", spring, sprung, 21.87);
-      tl.fromTo("#snip-headline-end", spring, sprung, 26.86);
-      tl.fromTo("#bubble", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(3)" }, 31.03);
+      tl.fromTo("#stamp", spring, sprung, 0.12);
+      tl.fromTo("#chip-first", spring, sprung, 6.86);
+      tl.fromTo("#num-4m", spring, sprung, 8.22);
+      tl.fromTo("#card-plat", spring, sprung, 10.28);
+      tl.fromTo("#chip-kukula", spring, sprung, 14.24);
+      tl.fromTo("#num-2m", spring, sprung, 18.37);
+      tl.fromTo("#chip-60", spring, sprung, 19.88);
+      tl.fromTo("#chip-dates", spring, sprung, 21.62);
+      tl.fromTo("#snip-headline", spring, sprung, 3.07);
+      tl.fromTo("#snip-premio", spring, sprung, 5.60);
+      tl.fromTo("#snip-kukula", spring, sprung, 14.12);
+      tl.fromTo("#snip-feira", spring, sprung, 19.88);
+      tl.fromTo("#snip-headline-end", spring, sprung, 24.41);
+      tl.fromTo("#bubble", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(3)" }, 28.21);
 
       // Subtitle fades, timed to the voice
-      const subStarts = { sub1: 0, sub2: 6.16, sub3: 11.30, sub4: 15.53, sub5: 21.87, sub6: 26.86 };
+      const subStarts = { sub1: 0, sub2: 5.60, sub3: 10.28, sub4: 14.12, sub5: 19.88, sub6: 24.41 };
       Object.entries(subStarts).forEach(([id, t]) => {
         tl.fromTo("#"+id, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.16, ease: "power2.out" }, t);
       });
+
+
+      const D = 29.6;
+      tl.to("#floor", { y: -28, duration: D, ease: "none" }, 0);
+      tl.to("#midgrid", { y: 36, duration: D, ease: "none" }, 0);
+      tl.to("#floor", { opacity: 0.65, duration: 1.6, ease: "sine.inOut", repeat: 17, yoyo: true }, 0);
+      tl.to("#midgrid", { opacity: 0.45, duration: 1.9, ease: "sine.inOut", repeat: 14, yoyo: true }, 0);
+      tl.to("#scan", { y: 8, duration: 1.2, ease: "sine.inOut", repeat: 24, yoyo: true }, 0);
+      tl.to("#blob-a", { scale: 1.25, x: 40, duration: 3.2, ease: "sine.inOut", repeat: 8, yoyo: true }, 0);
+      tl.to("#blob-b", { scale: 1.2, x: -36, duration: 2.8, ease: "sine.inOut", repeat: 10, yoyo: true }, 0.2);
+      tl.to("#blob-c", { scale: 1.3, y: -30, duration: 2.4, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.1);
+      tl.to("#blob-d", { scale: 1.18, y: 24, duration: 3.0, ease: "sine.inOut", repeat: 9, yoyo: true }, 0.3);
+      tl.to("#para-sq", { rotation: 18, y: -40, duration: 4.2, ease: "sine.inOut", repeat: 6, yoyo: true }, 0);
+      tl.to("#para-sq2", { rotation: -16, y: 36, duration: 3.6, ease: "sine.inOut", repeat: 7, yoyo: true }, 0);
+      tl.to("#para-bar", { y: -50, duration: 5.0, ease: "sine.inOut", repeat: 5, yoyo: true }, 0);
+      tl.to("#para-circ", { rotation: 25, x: -30, duration: 4.4, ease: "sine.inOut", repeat: 6, yoyo: true }, 0);
+      tl.to("#icon-agro", { y: -28, rotation: 8, duration: 2.6, ease: "sine.inOut", repeat: 10, yoyo: true }, 0);
+      tl.to("#icon-app", { y: 24, rotation: -6, duration: 2.9, ease: "sine.inOut", repeat: 9, yoyo: true }, 0.15);
+      tl.to("#icon-ai", { y: -22, rotation: 10, duration: 2.4, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.3);
+      tl.to("#icon-agro2", { y: 20, rotation: -12, duration: 3.1, ease: "sine.inOut", repeat: 8, yoyo: true }, 0.2);
+      tl.to("#ticker-track", { x: -980, duration: 7.4, ease: "none", repeat: 3 }, 0);
+      tl.to("#dot-0", { y: -50, duration: 2.20, ease: "sine.inOut", repeat: 13, yoyo: true }, 0.00);
+      tl.to("#dot-1", { y: 42, duration: 2.55, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.05);
+      tl.to("#dot-2", { y: -50, duration: 2.90, ease: "sine.inOut", repeat: 10, yoyo: true }, 0.10);
+      tl.to("#dot-3", { y: 42, duration: 3.25, ease: "sine.inOut", repeat: 9, yoyo: true }, 0.15);
+      tl.to("#dot-4", { y: -50, duration: 3.60, ease: "sine.inOut", repeat: 8, yoyo: true }, 0.20);
+      tl.to("#dot-5", { y: 42, duration: 2.20, ease: "sine.inOut", repeat: 13, yoyo: true }, 0.25);
+      tl.to("#dot-6", { y: -50, duration: 2.55, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.00);
+      tl.to("#dot-7", { y: 42, duration: 2.90, ease: "sine.inOut", repeat: 10, yoyo: true }, 0.05);
+      tl.to("#dot-8", { y: -50, duration: 3.25, ease: "sine.inOut", repeat: 9, yoyo: true }, 0.10);
+      tl.to("#dot-9", { y: 42, duration: 3.60, ease: "sine.inOut", repeat: 8, yoyo: true }, 0.15);
+      tl.to("#dot-10", { y: -50, duration: 2.20, ease: "sine.inOut", repeat: 13, yoyo: true }, 0.20);
+      tl.to("#dot-11", { y: 42, duration: 2.55, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.25);
+      tl.to("#dot-12", { y: -50, duration: 2.90, ease: "sine.inOut", repeat: 10, yoyo: true }, 0.00);
+      tl.to("#dot-13", { y: 42, duration: 3.25, ease: "sine.inOut", repeat: 9, yoyo: true }, 0.05);
+      tl.to("#dot-14", { y: -50, duration: 3.60, ease: "sine.inOut", repeat: 8, yoyo: true }, 0.10);
+      tl.to("#dot-15", { y: 42, duration: 2.20, ease: "sine.inOut", repeat: 13, yoyo: true }, 0.15);
+      tl.to("#dot-16", { y: -50, duration: 2.55, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.20);
+      tl.to("#dot-17", { y: 42, duration: 2.90, ease: "sine.inOut", repeat: 10, yoyo: true }, 0.25);
+      tl.to("#dot-18", { y: -50, duration: 3.25, ease: "sine.inOut", repeat: 9, yoyo: true }, 0.00);
+      tl.to("#dot-19", { y: 42, duration: 3.60, ease: "sine.inOut", repeat: 8, yoyo: true }, 0.05);
+      tl.to("#bit-0", { y: -32, duration: 2.50, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.00);
+      tl.to("#bit-1", { y: 28, duration: 2.90, ease: "sine.inOut", repeat: 10, yoyo: true }, 0.08);
+      tl.to("#bit-2", { y: -32, duration: 3.30, ease: "sine.inOut", repeat: 8, yoyo: true }, 0.16);
+      tl.to("#bit-3", { y: 28, duration: 3.70, ease: "sine.inOut", repeat: 8, yoyo: true }, 0.24);
+      tl.to("#bit-4", { y: -32, duration: 2.50, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.32);
+      tl.to("#bit-5", { y: 28, duration: 2.90, ease: "sine.inOut", repeat: 10, yoyo: true }, 0.00);
+      tl.to("#bit-6", { y: -32, duration: 3.30, ease: "sine.inOut", repeat: 8, yoyo: true }, 0.08);
+      tl.to("#bit-7", { y: 28, duration: 3.70, ease: "sine.inOut", repeat: 8, yoyo: true }, 0.16);
+      tl.to("#bit-8", { y: -32, duration: 2.50, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.24);
+      tl.to("#bit-9", { y: 28, duration: 2.90, ease: "sine.inOut", repeat: 10, yoyo: true }, 0.32);
 
       window.__timelines = window.__timelines || {};
       window.__timelines.main = tl;
