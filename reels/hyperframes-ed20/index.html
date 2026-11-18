@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#f4efe4" />
+  <title>Pré-visualização · Reel Hyperframes · Edição 20</title>
+  <style>
+    @font-face{font-family:"Archivo Black";src:url("assets/fonts/ArchivoBlack-Regular.ttf") format("truetype");font-display:swap}
+    @font-face{font-family:"Space Mono";src:url("assets/fonts/SpaceMono-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+    :root{--bg:#f4efe4;--ink:#0b2a66;--muted:#3d4a6b;--cy:#005b93;--pink:#ff48b0;--yel:#ffe800;--panel:#fbf8f1}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo Black",system-ui,sans-serif;line-height:1.4}
+    body{min-height:100vh;padding:24px 16px 48px}
+    .wrap{max-width:920px;margin:0 auto}
+    .kicker{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--yel);border:2px solid var(--ink);padding:4px 8px;display:inline-block;box-shadow:3px 3px 0 var(--pink)}
+    h1{font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:-.03em;line-height:1.05;margin:14px 0 10px;text-shadow:3px 2px 0 rgba(255,72,176,.5),-2px -1px 0 rgba(0,120,191,.3)}
+    .note{font-family:"Space Mono",monospace;font-size:.85rem;margin:0 0 22px;color:var(--ink)}
+    .stage{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+    .phone{width:min(100%,390px);margin:0 auto;background:#14213d;border:3px solid var(--ink);border-radius:32px;padding:18px 12px 22px;box-shadow:8px 8px 0 var(--pink),-4px -3px 0 var(--yel)}
+    .phone video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;border-radius:16px}
+    .side{flex:1;min-width:260px}
+    .side h2{font-size:1rem;margin:0 0 8px}
+    .cap{background:var(--panel);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--pink);padding:16px 16px 14px;font-size:.95rem;white-space:pre-wrap}
+    .cap p{margin:0 0 10px}
+    .tags{font-family:"Space Mono",monospace;font-size:.8rem;margin-top:8px}
+    .meta{font-family:"Space Mono",monospace;font-size:.75rem;color:var(--muted);margin-top:18px}
+    a{color:var(--cy)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="kicker">Pré-visualização · nada foi publicado</span>
+    <h1>Reel Hyperframes · Benguela TIC 2026</h1>
+    <p class="note">Protótipo para a edição 20 da newsletter da Kanda IA. Uma história, em português, com o Kandinho. A voz também está no vídeo.</p>
+    <div class="stage">
+      <div class="phone">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster="qa/poster.png"
+          src="kandinho_benguela_tic_reel_v1.mp4"
+          title="Reel do Kandinho sobre a Feira Benguela TIC 2026">
+        </video>
+      </div>
+      <div class="side">
+        <h2>Legenda</h2>
+        <div class="cap">
+          <p>A Kitanda Agro venceu o concurso de inovação da Feira Benguela TIC 2026, segundo o PTI. A Kukula, com uma aplicação de gestão agropecuária que usa IA, ficou em terceiro.</p>
+          <p>A feira correu de 12 a 14 de novembro, no Largo de África, em Benguela, e reuniu cerca de 60 startups. Fora de Luanda também há equipas a construir, e a IA já aparece no campo.</p>
+          <p>Mais na newsletter: kandaia.ao</p>
+          <div class="tags">#KandaIA #IAemAngola #IAparaTodos</div>
+        </div>
+        <p class="meta">
+          Fonte: PTI, 17 nov 2026.<br>
+          Duração: 33 segundos. Voz em português europeu (gerada por IA), com o selo «Gerado por IA».<br>
+          Composição HTML: <a href="composition.html">composition.html</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
